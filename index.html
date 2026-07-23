@@ -9,31 +9,45 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#4E5E78" />
 
+    <!-- Ícones -->
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" href="images/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
 
+    <!-- Preloads Críticos -->
     <link rel="preload" href="https://fonts.gstatic.com/s/cormorantgaramond/v16/co3zW4SlSgIFPtfrK6eeC1SnybclpVw.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="images/natalia-hero.webp" as="image" type="image/webp" />
 
+    <!-- Meta Tags Sociais -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nataliaferreira.com.br" />
     <meta property="og:title" content="Natália Ferreira | Psicóloga Clínica" />
     <meta property="og:description" content="Espaço de acolhimento científico e humanizado. Atendimento em Volta Redonda e online." />
     <meta property="og:image" content="https://nataliaferreira.com.br/images/og-image.jpg" />
-
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="Natália Ferreira | Psicóloga Clínica" />
     <meta property="twitter:description" content="Espaço de acolhimento científico e humanizado." />
 
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- Font Awesome com SRI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/dark-mode.css" media="(prefers-color-scheme: dark)" />
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -42,6 +56,7 @@
         gtag('config', 'G-XXXXXXXXXX');
     </script>
 
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -71,367 +86,496 @@
 </head>
 <body>
 
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Progress Bar -->
     <div class="progress-bar" id="readingProgress" aria-hidden="true"></div>
 
-    <header id="mainHeader">
+    <!-- Header -->
+    <header id="mainHeader" role="banner">
         <div class="container header-content">
-            <a href="#hero" class="logo">Natália <span>Ferreira</span></a>
+            <a href="#hero" class="logo" aria-label="Natália Ferreira - Página inicial">
+                Natália <span>Ferreira</span>
+            </a>
+            
             <nav role="navigation" aria-label="Menu Principal">
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#ajudo">Como Posso Ajudar</a></li>
-                    <li><a href="#como-funciona">O Processo</a></li>
-                    <li><a href="#consultorio">Consultório</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="https://wa.me/5524999442374" target="_blank" class="btn btn-primary nav-cta track-wp">Agendar sessão</a></li>
+                <ul class="nav-links" id="navLinks" role="menubar">
+                    <li role="none"><a href="#sobre" role="menuitem">Sobre</a></li>
+                    <li role="none"><a href="#ajudo" role="menuitem">Como Posso Ajudar</a></li>
+                    <li role="none"><a href="#como-funciona" role="menuitem">O Processo</a></li>
+                    <li role="none"><a href="#consultorio" role="menuitem">Consultório</a></li>
+                    <li role="none"><a href="#faq" role="menuitem">FAQ</a></li>
+                    <li role="none"><a href="https://wa.me/5524999442374" target="_blank" class="btn btn-primary nav-cta track-wp" role="menuitem">Agendar sessão</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" id="hamburger" aria-label="Abrir Menu" aria-expanded="false">
-                <i class="fa-solid fa-bars"></i>
+
+            <button class="hamburger" id="hamburger" aria-label="Abrir ou fechar menu" aria-expanded="false" aria-controls="navLinks">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </button>
         </div>
     </header>
 
-    <section class="hero" id="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <span class="badge">Acolhimento Humano &amp; Base Científica</span>
-                <h1>Você não precisa enfrentar tudo isso sozinha.</h1>
-                <p class="subtitle">Um espaço seguro e sigiloso para redescobrir o equilíbrio, aliviar a sobrecarga mental e estruturar uma jornada com mais leveza.</p>
-                
-                <div class="btn-group">
-                    <a href="https://wa.me/5524999442374?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão." target="_blank" class="btn btn-primary track-wp">
-                        Agendar sessão <i class="fa-solid fa-arrow-right-long"></i>
+    <!-- Overlay do Menu -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Conteúdo Principal -->
+    <main id="main-content">
+
+        <!-- HERO -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge">Acolhimento Humano &amp; Base Científica</span>
+                    <h1 id="hero-title">Você não precisa enfrentar tudo isso sozinha.</h1>
+                    <p class="subtitle">Um espaço seguro e sigiloso para redescobrir o equilíbrio, aliviar a sobrecarga mental e estruturar uma jornada com mais leveza.</p>
+                    
+                    <div class="btn-group">
+                        <a href="https://wa.me/5524999442374?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão." target="_blank" class="btn btn-primary track-wp" rel="noopener">
+                            Agendar sessão <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                        </a>
+                        <a href="#sobre" class="btn btn-secondary">Conheça minha história</a>
+                    </div>
+
+                    <div class="trust-indicators">
+                        <span><i class="fa-regular fa-circle-check" aria-hidden="true"></i> Atendimento Particular</span>
+                        <span><i class="fa-regular fa-circle-check" aria-hidden="true"></i> Presencial &amp; Online</span>
+                        <span><i class="fa-regular fa-circle-check" aria-hidden="true"></i> Sigilo Absoluto</span>
+                        <span><i class="fa-regular fa-circle-check" aria-hidden="true"></i> Sessões de 50 min</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <picture>
+                        <source srcset="images/natalia-hero.webp" type="image/webp">
+                        <source srcset="images/natalia-hero.png" type="image/png">
+                        <img src="images/natalia-hero.png" alt="Dra. Natália Ferreira - Psicóloga Clínica" width="420" height="560" loading="eager" fetchpriority="high">
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credibility Bar -->
+        <div class="credibility-bar reveal" role="complementary" aria-label="Credenciais profissionais">
+            <div class="container cred-content">
+                <div class="cred-item"><span class="stars" aria-label="5 estrelas"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></span> Prontuários e Sigilo Ético</div>
+                <div class="cred-item"><i class="fa-solid fa-user-shield" aria-hidden="true"></i> Regulação Ativa CRP-05</div>
+                <div class="cred-item"><i class="fa-solid fa-laptop-medical" aria-hidden="true"></i> Cadastro e-Psi Autorizado</div>
+                <div class="cred-item"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Especialista em TCC</div>
+            </div>
+        </div>
+
+        <!-- Problemas -->
+        <section class="section-dark" id="problemas" aria-labelledby="problemas-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="problemas-title">Talvez você esteja passando por...</h2>
+                <div class="grid-cards-problemas">
+                    <article class="card-problem reveal">
+                        <i class="fa-solid fa-wind problem-icon" aria-hidden="true"></i>
+                        <h3>Ansiedade</h3>
+                        <p>Sentimento constante de urgência, pensamentos acelerados e cansaço físico inexplicável.</p>
+                    </article>
+                    <article class="card-problem reveal">
+                        <i class="fa-solid fa-battery-quarter problem-icon" aria-hidden="true"></i>
+                        <h3>Estresse Crônico</h3>
+                        <p>Esgotamento físico e mental que drena sua energia para as tarefas cotidianas mais básicas.</p>
+                    </article>
+                    <article class="card-problem reveal">
+                        <i class="fa-solid fa-fire-line problem-icon" aria-hidden="true"></i>
+                        <h3>Burnout</h3>
+                        <p>O limite profissional atingido através de uma sobrecarga emocional severa e exaustão por trabalho.</p>
+                    </article>
+                    <article class="card-problem reveal">
+                        <i class="fa-solid fa-cloud-showers-heavy problem-icon" aria-hidden="true"></i>
+                        <h3>Depressão</h3>
+                        <p>Uma tristeza persistente combinada com a perda crônica de interesse e ânimo pelas atividades.</p>
+                    </article>
+                    <article class="card-problem reveal">
+                        <i class="fa-solid fa-heart-crack problem-icon" aria-hidden="true"></i>
+                        <h3>Processos de Luto</h3>
+                        <p>A dor complexa de lidar com perdas significativas e o desafio de reorganizar a própria vida.</p>
+                    </article>
+                    <article class="card-problem reveal">
+                        <i class="fa-solid fa-face-grimace problem-icon" aria-hidden="true"></i>
+                        <h3>Baixa Autoestima</h3>
+                        <p>Dificuldade crônica de reconhecer seu próprio valor, gerando autocrítica severa e inseguranças.</p>
+                    </article>
+                    <article class="card-problem reveal">
+                        <i class="fa-solid fa-comments-dashed problem-icon" aria-hidden="true"></i>
+                        <h3>Dificuldades de Relação</h3>
+                        <p>Conflitos repetitivos, barreiras na comunicação interpessoal e desgaste com pessoas próximas.</p>
+                    </article>
+                    <article class="card-problem reveal">
+                        <i class="fa-solid fa-bolt-lightning problem-icon" aria-hidden="true"></i>
+                        <h3>Crises de Ansiedade</h3>
+                        <p>O medo paralisante acompanhado por reações físicas intensas, repentinas e assustadoras.</p>
+                    </article>
+                </div>
+                <div class="center-cta reveal">
+                    <a href="https://wa.me/5524999442374?text=Quero%20falar%20sobre%20o%20que%20estou%20sentindo." target="_blank" class="btn btn-whatsapp track-wp" rel="noopener">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Quero conversar em sigilo
                     </a>
-                    <a href="#sobre" class="btn btn-secondary">Conheça minha história</a>
                 </div>
+            </div>
+        </section>
 
-                <div class="trust-indicators">
-                    <span><i class="fa-regular fa-circle-check"></i> Atendimento Particular</span>
-                    <span><i class="fa-regular fa-circle-check"></i> Presencial &amp; Online</span>
-                    <span><i class="fa-regular fa-circle-check"></i> Sigilo Absoluto</span>
-                    <span><i class="fa-regular fa-circle-check"></i> Sessões de 50 min</span>
+        <!-- Benefícios -->
+        <section class="section-light" id="beneficios" aria-labelledby="beneficios-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="beneficios-title">O que buscaremos <span>juntas</span> na terapia</h2>
+                <div class="grid-beneficios">
+                    <div class="benefit-item reveal">
+                        <span class="benefit-number" aria-hidden="true">01</span>
+                        <h3>Mais tranquilidade</h3>
+                        <p>Desenvolver ferramentas práticas para acalmar a mente e desacelerar os pensamentos.</p>
+                    </div>
+                    <div class="benefit-item reveal">
+                        <span class="benefit-number" aria-hidden="true">02</span>
+                        <h3>Mais equilíbrio</h3>
+                        <p>Aprender a dosar e responder às exigências externas sem se deixar de lado na rotina.</p>
+                    </div>
+                    <div class="benefit-item reveal">
+                        <span class="benefit-number" aria-hidden="true">03</span>
+                        <h3>Mais autoconhecimento</h3>
+                        <p>Compreender seus gatilhos emocionais e romper de vez com ciclos de repetição prejudiciais.</p>
+                    </div>
+                    <div class="benefit-item reveal">
+                        <span class="benefit-number" aria-hidden="true">04</span>
+                        <h3>Relações Saudáveis</h3>
+                        <p>Construir conexões interpessoais maduras através de limites claros e comunicação assertiva.</p>
+                    </div>
+                    <div class="benefit-item reveal">
+                        <span class="benefit-number" aria-hidden="true">05</span>
+                        <h3>Qualidade de vida</h3>
+                        <p>Viver o momento presente com clareza mental, resgatando o prazer nas pequenas escolhas.</p>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <picture>
-                    <source srcset="images/natalia-hero.webp" type="image/webp">
-                    <img src="images/natalia-hero.png" alt="Dra. Natália Ferreira - Psicóloga Clínica" width="420" height="560">
-                </picture>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="credibility-bar reveal">
-        <div class="container cred-content">
-            <div class="cred-item"><span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span> Prontuários e Sigilo Ético</div>
-            <div class="cred-item"><i class="fa-solid fa-user-shield"></i> Regulação Ativa CRP-05</div>
-            <div class="cred-item"><i class="fa-solid fa-laptop-medical"></i> Cadastro e-Psi Autorizado</div>
-            <div class="cred-item"><i class="fa-solid fa-graduation-cap"></i> Especialista em TCC</div>
-        </div>
-    </div>
+        <!-- Sobre -->
+        <section class="section-dark" id="sobre" aria-labelledby="sobre-title">
+            <div class="container about-grid">
+                <div class="about-image reveal">
+                    <picture>
+                        <source srcset="images/natalia-sobre.webp" type="image/webp">
+                        <source srcset="images/natalia-sobre.png" type="image/png">
+                        <img src="images/natalia-sobre.png" alt="Natália Ferreira em ambiente de atendimento" width="380" height="506" loading="lazy">
+                    </picture>
+                </div>
+                <div class="about-text reveal">
+                    <h2 class="section-title" id="sobre-title" style="text-align: left; margin-bottom: 32px;">Quem está por trás do <span>acolhimento</span></h2>
+                    <p class="story-paragraph">Escolhi a Psicologia porque sempre acreditei que a escuta atenta e qualificada tem o poder de transformar dores profundas em caminhos de autonomia. Ver alguém recuperar as rédeas da própria vida é o que move o meu fazer diário.</p>
+                    <p>Sou psicóloga clínica formada pela <strong>Faculdade Sul Fluminense (FASF)</strong>, atuando sob uma perspectiva ética, empática e estritamente científica.</p>
+                    <p>Consolidei minha base técnica através da especialização concluída em <strong>Terapia Cognitivo-Comportamental (TCC)</strong> pela Universidade Estácio de Sá e da especialização concluída em <strong>Psicologia Hospitalar</strong> pela Universidade Severino Sombra (Vassouras/RJ).</p>
+                    <p>Essa dupla bagagem permite que eu integre o rigor das evidências científicas ao cuidado sensível, amparando o paciente tanto nas demandas de consultório quanto no enfrentamento de diagnósticos complexos e suporte familiar.</p>
+                    <a href="#como-funciona" class="btn btn-secondary" style="margin-top: 16px;">Conhecer o processo</a>
+                </div>
+            </div>
+        </section>
 
-    <section class="section-dark" id="problemas">
-        <div class="container">
-            <h2 class="section-title reveal">Talvez você esteja passando por...</h2>
-            <div class="grid-cards-problemas">
-                <div class="card-problem reveal">
-                    <i class="fa-solid fa-wind problem-icon"></i>
-                    <h3>Ansiedade</h3>
-                    <p>Sentimento constante de urgência, pensamentos acelerados e cansaço físico inexplicável.</p>
-                </div>
-                <div class="card-problem reveal">
-                    <i class="fa-solid fa-battery-quarter problem-icon"></i>
-                    <h3>Estresse Crônico</h3>
-                    <p>Esgotamento físico e mental que drena sua energia para as tarefas cotidianas mais básicas.</p>
-                </div>
-                <div class="card-problem reveal">
-                    <i class="fa-solid fa-fire-line problem-icon"></i>
-                    <h3>Burnout</h3>
-                    <p>O limite profissional atingido através de uma sobrecarga emocional severa e exaustão por trabalho.</p>
-                </div>
-                <div class="card-problem reveal">
-                    <i class="fa-solid fa-cloud-showers-heavy problem-icon"></i>
-                    <h3>Depressão</h3>
-                    <p>Uma tristeza persistente combinada com a perda crônica de interesse e ânimo pelas atividades.</p>
-                </div>
-                <div class="card-problem reveal">
-                    <i class="fa-solid fa-heart-crack problem-icon"></i>
-                    <h3>Processos de Luto</h3>
-                    <p>A dor complexa de lidar com perdas significativas e o desafio de reorganizar a própria vida.</p>
-                </div>
-                <div class="card-problem reveal">
-                    <i class="fa-solid fa-face-grimace problem-icon"></i>
-                    <h3>Baixa Autoestima</h3>
-                    <p>Dificuldade crônica de reconhecer seu próprio valor, gerando autocrítica severa e inseguranças.</p>
-                </div>
-                <div class="card-problem reveal">
-                    <i class="fa-solid fa-comments-dashed problem-icon"></i>
-                    <h3>Dificuldades de Relação</h3>
-                    <p>Conflitos repetitivos, barreiras na comunicação interpessoal e desgaste com pessoas próximas.</p>
-                </div>
-                <div class="card-problem reveal">
-                    <i class="fa-solid fa-bolt-lightning problem-icon"></i>
-                    <h3>Crises de Ansiedade</h3>
-                    <p>O medo paralisante acompanhado por reações físicas intensas, repentinas e assustadoras.</p>
+        <!-- Como Funciona -->
+        <section class="section-light" id="como-funciona" aria-labelledby="processo-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="processo-title">O caminho para o seu <span>bem-estar</span></h2>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-step" aria-hidden="true">1</div>
+                        <h3>Primeiro Contato</h3>
+                        <p>Você envia uma mensagem informando sua preferência de modalidade (online ou presencial no Sul Fluminense).</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-step" aria-hidden="true">2</div>
+                        <h3>Agendamento</h3>
+                        <p>Encontraremos o melhor horário de acordo com sua rotina para que seu atendimento ocorra de forma tranquila.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-step" aria-hidden="true">3</div>
+                        <h3>Primeira Sessão</h3>
+                        <p>Um encontro inicial focado no acolhimento de suas principais queixas, avaliação do histórico e alinhamento do processo.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-step" aria-hidden="true">4</div>
+                        <h3>Plano Terapêutico</h3>
+                        <p>Desenhamos metas estruturadas de forma colaborativa com base nas suas reais necessidades atuais.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-step" aria-hidden="true">5</div>
+                        <h3>Acompanhamento</h3>
+                        <p>Sessões contínuas focadas no desenvolvimento de habilidades, autonomia e alta terapêutica de longo prazo.</p>
+                    </div>
                 </div>
             </div>
-            <div class="center-cta reveal">
-                <a href="https://wa.me/5524999442374?text=Quero%20falar%20sobre%20o%20que%20estou%20sentindo." target="_blank" class="btn btn-whatsapp track-wp">
-                    <i class="fa-brands fa-whatsapp"></i> Quero conversar em sigilo
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section-light" id="beneficios">
-        <div class="container">
-            <h2 class="section-title reveal">O que buscaremos <span>juntas</span> na terapia</h2>
-            <div class="grid-beneficios">
-                <div class="benefit-item reveal">
-                    <span class="benefit-number">01</span>
-                    <h3>Mais tranquilidade</h3>
-                    <p>Desenvolver ferramentas práticas para acalmar a mente e desacelerar os pensamentos.</p>
-                </div>
-                <div class="benefit-item reveal">
-                    <span class="benefit-number">02</span>
-                    <h3>Mais equilíbrio</h3>
-                    <p>Aprender a dosar e responder às exigências externas sem se deixar de lado na rotina.</p>
-                </div>
-                <div class="benefit-item reveal">
-                    <span class="benefit-number">03</span>
-                    <h3>Mais autoconhecimento</h3>
-                    <p>Compreender seus gatilhos emocionais e romper de vez com ciclos de repetição prejudiciais.</p>
-                </div>
-                <div class="benefit-item reveal">
-                    <span class="benefit-number">04</span>
-                    <h3>Relações Saudáveis</h3>
-                    <p>Construir conexões interpessoais maduras através de limites claros e comunicação assertiva.</p>
-                </div>
-                <div class="benefit-item reveal">
-                    <span class="benefit-number">05</span>
-                    <h3>Qualidade de vida</h3>
-                    <p>Viver o momento presente com clareza mental, resgatando o prazer nas pequenas escolhas.</p>
+        <!-- Como Posso Ajudar -->
+        <section class="section-dark" id="ajudo" aria-labelledby="ajudo-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="ajudo-title">Como posso te <span>ajudar</span></h2>
+                <div class="grid-especialidades">
+                    <article class="card-especialidade reveal">
+                        <div class="esp-icon" aria-hidden="true"><i class="fa-solid fa-user"></i></div>
+                        <h3>Tratamento da Ansiedade e Estresse</h3>
+                        <p>Desenvolvimento de estratégias focadas em acalmar respostas fisiológicas, reestruturar pensamentos e devolver o controle da rotina.</p>
+                    </article>
+                    <article class="card-especialidade reveal">
+                        <div class="esp-icon" aria-hidden="true"><i class="fa-solid fa-brain-circuit"></i></div>
+                        <h3>Intervenção em Burnout e Esgotamento</h3>
+                        <p>Espaço voltado a profissionais expostos a alto estresse, focando no estabelecimento de limites saudáveis e recuperação da saúde integral.</p>
+                    </article>
+                    <article class="card-especialidade reveal">
+                        <div class="esp-icon" aria-hidden="true"><i class="fa-solid fa-house-medical"></i></div>
+                        <h3>Suporte em Psicologia Hospitalar e Luto</h3>
+                        <p>Intervenções cuidadosas para indivíduos enfrentando dores decorrentes de adoecimentos graves, internações e amparo integral no luto.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section-dark" id="sobre">
-        <div class="container about-grid">
-            <div class="about-image reveal">
-                <picture>
-                    <source srcset="images/natalia-sobre.webp" type="image/webp">
-                    <img src="images/natalia-sobre.png" alt="Natália Ferreira em ambiente de atendimento" width="380" height="506">
-                </picture>
+        <!-- TCC -->
+        <section class="section-light" id="sobre-tcc" aria-labelledby="tcc-title">
+            <div class="container tcc-container">
+                <div class="tcc-content reveal">
+                    <h2 class="section-title" id="tcc-title" style="text-align: left; margin-bottom: 24px;">A Ciência por trás do Processo: <span>A TCC</span></h2>
+                    <p>A <strong>Terapia Cognitivo-Comportamental (TCC)</strong> é reconhecida mundialmente como o padrão-ouro no tratamento de diversos transtornos mentais, justamente por possuir eficácia validada por pesquisas científicas controladas.</p>
+                    
+                    <div class="tcc-features">
+                        <div class="tcc-feature-item">
+                            <h4>Como funciona?</h4>
+                            <p>Atuamos focando em como você processa os acontecimentos. Ao identificar e intervir em visões disfuncionais, conseguimos modificar reações emocionais e comportamentais desadaptativas.</p>
+                        </div>
+                        <div class="tcc-feature-item">
+                            <h4>Quando é indicada?</h4>
+                            <p>É altamente recomendada em quadros de fobias, episódios depressivos, transtorno de pânico, ansiedade generalizada, insônia crônica e manejo de hábitos nocivos.</p>
+                        </div>
+                        <div class="tcc-feature-item">
+                            <h4>Por que funciona?</h4>
+                            <p>Por ser uma abordagem direta, prática, focada nas metas do momento presente e desenhada para dar ao paciente as ferramentas necessárias para sua própria independência.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="about-text reveal">
-                <h2 class="section-title" style="text-align: left; margin-bottom: 32px;">Quem está por trás do <span>acolhimento</span></h2>
-                <p class="story-paragraph">Escolhi a Psicologia porque sempre acreditei que a escuta atenta e qualificada tem o poder de transformar dores profundas em caminhos de autonomia. Ver alguém recuperar as rédeas da própria vida é o que move o meu fazer diário.</p>
-                <p>Sou psicóloga clínica formada pela <strong>Faculdade Sul Fluminense (FASF)</strong>, atuando sob uma perspectiva ética, empática e estritamente científica.</p>
-                <p>Consolidei minha base técnica através da especialização concluída em <strong>Terapia Cognitivo-Comportamental (TCC)</strong> pela Universidade Estácio de Sá e da especialização concluída em <strong>Psicologia Hospitalar</strong> pela Universidade Severino Sombra (Vassouras/RJ).</p>
-                <p>Essa dupla bagagem permite que eu integre o rigor das evidências científicas ao cuidado sensível, amparando o paciente tanto nas demandas de consultório quanto no enfrentamento de diagnósticos complexos e suporte familiar.</p>
-                <a href="#contato" class="btn btn-secondary" style="margin-top: 16px;">Conhecer o processo</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section-light" id="como-funciona">
-        <div class="container">
-            <h2 class="section-title reveal">O caminho para o seu <span>bem-estar</span></h2>
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <div class="timeline-step">1</div>
-                    <h3>Primeiro Contato</h3>
-                    <p>Você envia uma mensagem informando sua preferência de modalidade (online ou presencial no Sul Fluminense).</p>
-                </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-step">2</div>
-                    <h3>Agendamento</h3>
-                    <p>Encontraremos o melhor horário em consonância com a agenda técnica para que seu atendimento ocorra de forma tranquila.</p>
-                </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-step">3</div>
-                    <h3>Primeira Sessão</h3>
-                    <p>Um encontro inicial focado no acolhimento de suas principais queixas, avaliação do histórico e alinhamento do processo.</p>
-                </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-step">4</div>
-                    <h3>Plano Terapêutico</h3>
-                    <p>Desenhamos metas estruturadas de forma colaborativa com base nas suas reais necessidades atuais.</p>
-                </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-step">5</div>
-                    <h3>Acompanhamento</h3>
-                    <p>Sessões contínuas focadas no desenvolvimento de habilidades cognitivas, autonomia e alta terapêutica de longo prazo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-dark" id="ajudo">
-        <div class="container">
-            <h2 class="section-title reveal">Como posso te <span>ajudar</span></h2>
-            <div class="grid-especialidades">
-                <div class="card-especialidade reveal">
-                    <div class="esp-icon"><i class="fa-solid fa-user"></i></div>
-                    <h3>Tratamento da Ansiedade e Estresse</h3>
-                    <p>Desenvolvimento de estratégias focadas em acalmar respostas fisiológicas, reestruturar pensamentos catastróficos e devolver o controle da rotina.</p>
-                </div>
-                <div class="card-especialidade reveal">
-                    <div class="esp-icon"><i class="fa-solid fa-brain-circuit"></i></div>
-                    <h3>Intervenção em Burnout e Esgotamento</h3>
-                    <p>Espaço voltado a profissionais expostos a alto estresse, focando no estabelecimento de limites saudáveis e recuperação da saúde integral.</p>
-                </div>
-                <div class="card-especialidade reveal">
-                    <div class="esp-icon"><i class="fa-solid fa-house-medical"></i></div>
-                    <h3>Suporte em Psicologia Hospitalar e Luto</h3>
-                    <p>Intervenções cuidadosas para indivíduos enfrentando dores decorrentes de adoecimentos graves, internações e amparo integral no luto de familiares.</p>
+        <!-- Consultório -->
+        <section class="section-dark" id="consultorio" aria-labelledby="consultorio-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="consultorio-title">Nosso Espaço de <span>Acolhimento</span></h2>
+                <div class="consultorio-grid">
+                    <div class="consultorio-info reveal">
+                        <h3>Privacidade e conforto planejados para você</h3>
+                        <p>Localizado em um ponto discreto e central de Volta Redonda, o consultório atende a rígidos critérios de acessibilidade acústica e física, assegurando total sigilo para os seus atendimentos presenciais.</p>
+                        <p class="address-text"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Edifício Premium, Sala 401 - Centro, Volta Redonda - RJ</p>
+                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary track-map"><i class="fa-solid fa-route" aria-hidden="true"></i> Ver rota no Google Maps</a>
+                    </div>
+                    <div class="consultorio-gallery reveal">
+                        <div class="gallery-slider" id="gallerySlider">
+                            <picture>
+                                <source srcset="images/consultorio-1.webp" type="image/webp">
+                                <img src="images/consultorio-1.jpg" alt="Recepção acolhedora do consultório de psicologia" class="gallery-img active" width="450" height="300" loading="lazy">
+                            </picture>
+                            <picture>
+                                <source srcset="images/consultorio-2.webp" type="image/webp">
+                                <img src="images/consultorio-2.jpg" alt="Sala de atendimento clínico individual da psicóloga" class="gallery-img" width="450" height="300" loading="lazy">
+                            </picture>
+                            <picture>
+                                <source srcset="images/consultorio-3.webp" type="image/webp">
+                                <img src="images/consultorio-3.jpg" alt="Espaço de espera aconchegante no consultório" class="gallery-img" width="450" height="300" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="map-container" style="margin-top: 20px;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.4735515201115!2d-44.1064!3d-22.5218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDMxJzE4LjUiUyA0NLCwMDYnMjMuMCJX!5e0!3m2!1spt-BR!2sbr!4v1700000000000" width="100%" height="220" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização geográfica do consultório"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section-light" id="sobre-tcc">
-        <div class="container tcc-container">
-            <div class="tcc-content reveal">
-                <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">A Ciência por trás do Processo: <span>A TCC</span></h2>
-                <p>A <strong>Terapia Cognitivo-Comportamental (TCC)</strong> é reconhecida mundialmente como o padrão-ouro no tratamento de diversos transtornos mentais, justamente por possuir eficácia validada por pesquisas científicas controladas.</p>
+        <!-- Depoimentos -->
+        <section class="section-light" id="depoimentos" aria-labelledby="depoimentos-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="depoimentos-title">Histórias de <span>Transformação</span></h2>
                 
-                <div class="tcc-features">
-                    <div class="tcc-feature-item">
-                        <h4>Como funciona?</h4>
-                        <p>Atuamos focando em como você processa os acontecimentos. Ao identificar e intervir em visões disfuncionais, conseguimos modificar reações emocionais e comportamentais desadaptativas.</p>
+                <!-- Prova Social Expandida -->
+                <div class="social-proof-stats reveal">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Sessões Realizadas</span>
                     </div>
-                    <div class="tcc-feature-item">
-                        <h4>Quando é indicada?</h4>
-                        <p>É altamente recomendada em quadros de fobias, episódios depressivos, transtorno de pânico, ansiedade generalizada, insônia crônica e manejo de hábitos nocivos.</p>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Pacientes Atendidos</span>
                     </div>
-                    <div class="tcc-feature-item">
-                        <h4>Por que funciona?</h4>
-                        <p>Por ser uma abordagem direta, prática, focada nas metas do momento presente e desenhada para dar ao paciente as ferramentas necessárias para sua própria independência.</p>
+                    <div class="stat-item">
+                        <span class="stat-number">4.9</span>
+                        <span class="stat-label">Avaliação Média</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Sigilo Garantido</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="section-dark" id="consultorio">
-        <div class="container">
-            <h2 class="section-title reveal">Nosso Espaço de <span>Acolhimento</span></h2>
-            <div class="consultorio-grid">
-                <div class="consultorio-info reveal">
-                    <h3>Privacidade e conforto planejados para você</h3>
-                    <p>Localizado em um ponto discreto e central de Volta Redonda, o consultório atende a rígidos critérios de acessibilidade acústica e física, assegurando total sigilo para os seus atendimentos presenciais.</p>
-                    <p class="address-text"><i class="fa-solid fa-location-dot"></i> Edifício Premium, Sala 401 - Centro, Volta Redonda - RJ</p>
-                    <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-secondary track-map"><i class="fa-solid fa-route"></i> Ver rota no Google Maps</a>
-                </div>
-                <div class="consultorio-gallery reveal">
-                    <div class="gallery-slider">
-                        <picture>
-                            <source srcset="images/consultorio-1.webp" type="image/webp">
-                            <img src="images/consultorio-1.jpg" alt="Recepção acolhedora do consultório de psicologia" class="gallery-img active" width="450" height="300">
-                        </picture>
-                        <picture>
-                            <source srcset="images/consultorio-2.webp" type="image/webp">
-                            <img src="images/consultorio-2.jpg" alt="Sala de atendimento clínico individual da psicóloga" class="gallery-img" width="450" height="300">
-                        </picture>
+                <div class="testimonials-wrapper reveal" id="testimonialContainer">
+                    <div class="testimonial-carousel" id="testimonialCarousel">
+                        <blockquote class="card-testimonial active">
+                            <div class="stars" aria-hidden="true"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <p>"Fazer terapia com a Natália mudou minha relação com o trabalho. Consegui identificar os primeiros sinais do Burnout e agir de maneira estruturada. Excelente profissional."</p>
+                            <cite class="author">M.A. — Volta Redonda/RJ</cite>
+                        </blockquote>
+                        <blockquote class="card-testimonial">
+                            <div class="stars" aria-hidden="true"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <p>"O acolhimento dela e o suporte psicológico oferecido à nossa família durante a internação do meu pai foram o nosso porto seguro. Equilíbrio humano e técnico impecável."</p>
+                            <cite class="author">R.S. — Barra Mansa/RJ</cite>
+                        </blockquote>
+                        <blockquote class="card-testimonial">
+                            <div class="stars" aria-hidden="true"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <p>"Depois de anos lutando contra a ansiedade, encontrei na Natália uma profissional que realmente entende e sabe como ajudar. Minha qualidade de vida melhorou muito."</p>
+                            <cite class="author">C.L. — Resende/RJ</cite>
+                        </blockquote>
                     </div>
-                    <div class="map-container" style="margin-top: 20px;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.4735515201115!2d-44.1064!3d-22.5218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDMxJzE4LjUiUyA0NLCwMDYnMjMuMCJX!5e0!3m2!1spt-BR!2sbr!4v1700000000000" width="100%" height="220" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização geográfica do consultório"></iframe>
+                    <div class="carousel-controls">
+                        <button id="prevTestimonial" aria-label="Depoimento Anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                        <button id="nextTestimonial" aria-label="Próximo Depoimento"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
                     </div>
+                    <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Indicadores de depoimentos"></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section-light" id="depoimentos">
-        <div class="container">
-            <h2 class="section-title reveal">Histórias de <span>Transformação</span></h2>
-            <div class="testimonials-wrapper reveal" id="testimonialContainer">
-                <div class="testimonial-carousel">
-                    <div class="card-testimonial active">
-                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <p>"Fazer terapia com a Natália mudou minha relação com o trabalho. Consegui identificar os primeiros sinais do Burnout e agir de maneira estruturada. Excelente profissional."</p>
-                        <span class="author">M.A. — Volta Redonda/RJ</span>
+        <!-- FAQ Expandido -->
+        <section class="section-dark" id="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="faq-title">Perguntas <span>Frequentes</span></h2>
+                <div class="faq-list">
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+                            Como funciona o primeiro atendimento?
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq1">
+                            <p>O primeiro encontro destina-se ao acolhimento inicial. É um momento livre de julgamentos onde você expõe suas demandas atuais e eu explico o direcionamento prático da abordagem Cognitivo-Comportamental para seu caso.</p>
+                        </div>
                     </div>
-                    <div class="card-testimonial">
-                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <p>"O acolhimento dela e o suporte psicológico oferecido à nossa família durante a internação do meu pai foram o nosso porto seguro. Equilíbrio humano e técnico impecável."</p>
-                        <span class="author">R.S. — Barra Mansa/RJ</span>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+                            Você aceita planos de saúde ou convênios?
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq2">
+                            <p>Os atendimentos são estritamente particulares. Emitimos o recibo e relatório técnico completo contendo todas as especificações e registros exigidos por lei para que você solicite o reembolso diretamente junto ao seu plano médico.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-controls">
-                    <button id="prevTestimonial" aria-label="Depoimento Anterior"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button id="nextTestimonial" aria-label="Próximo Depoimento"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+                            Como funciona o atendimento online? Possui a mesma eficácia?
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq3">
+                            <p>Sim. O Conselho Federal de Psicologia regulamenta e assegura que a eficácia clínica da modalidade online é idêntica ao presencial. Os atendimentos ocorrem por videochamada protegida em ambiente criptografado de ponta a ponta.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+                            Quanto tempo dura cada sessão?
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq4">
+                            <p>Cada sessão tem duração de 50 minutos, conforme recomendação do Conselho Federal de Psicologia. Esse tempo é suficiente para um trabalho aprofundado sem causar cansaço ou sobrecarga.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq5">
+                            Com que frequência devo ir à terapia?
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq5">
+                            <p>Inicialmente, recomenda-se sessões semanais para estabelecer vínculo e iniciar o processo terapêutico. Com o tempo, a frequência pode ser ajustada conforme sua evolução e necessidades específicas.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq6">
+                            Posso interromper a terapia a qualquer momento?
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq6">
+                            <p>Sim. A terapia é um processo voluntário. Você pode interromper ou retomar a qualquer momento. Recomendo apenas que essa decisão seja conversada em sessão para um encerramento adequado e reflexivo.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq7">
+                            Qual a diferença entre TCC e outras abordagens?
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq7">
+                            <p>A TCC é focada no presente e em soluções práticas. Diferente de abordagens que exploram apenas o passado, a TCC identifica padrões de pensamento e comportamento atuais, trabalhando ferramentas para modificá-los de forma direta e eficaz.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq8">
+                            Como funciona o reembolso do plano de saúde?
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq8">
+                            <p>Você paga a sessão diretamente e recebe um recibo detalhado com todas as informações necessárias (número do CRP, data, valor, etc.). Basta apresentar esse documento ao seu plano para solicitar o reembolso conforme a cobertura contratada.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq9">
+                            O atendimento online é seguro e sigiloso?
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq9">
+                            <p>Sim! Utilizamos plataformas certificadas com criptografia de ponta a ponta, garantindo total segurança e sigilo. As sessões online seguem os mesmos padrões éticos e profissionais do atendimento presencial.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq10">
+                            O que acontece na primeira sessão?
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq10">
+                            <p>A primeira sessão é um momento de acolhimento e escuta. Vamos conversar sobre suas expectativas, histórico e principais queixas. Também esclareço dúvidas sobre o processo terapêutico e alinhamos os próximos passos.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section-dark" id="faq">
-        <div class="container">
-            <h2 class="section-title reveal">Perguntas <span>Frequentes</span></h2>
-            <div class="faq-list">
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        Como funciona o primeiro atendimento?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>O primeiro encontro destina-se ao acolhimento inicial. É um momento livre de julgamentos onde você expõe suas demandas atuais e eu explico o direcionamento prático da abordagem Cognitivo-Comportamental para seu caso.</p>
-                    </div>
+        <!-- CTA Final -->
+        <section class="cta-final" id="contato" aria-labelledby="cta-title">
+            <div class="container">
+                <h2 id="cta-title" class="reveal">Dê o próximo passo em direção a uma vida com mais leveza.</h2>
+                <p class="subtitle reveal">Os horários semanais da agenda clínica são organizados para preservar a qualidade de cada acompanhamento. Garanta seu espaço de cuidado.</p>
+                <div class="btn-group reveal" style="justify-content: center;">
+                    <a href="https://wa.me/5524999442374?text=Quero%20reservar%20meu%20horário%20na%20agenda." target="_blank" class="btn btn-whatsapp track-wp" style="padding: 20px 48px; font-size: 1.1rem;" rel="noopener">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Agendar Sessão Agora
+                    </a>
                 </div>
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        Você aceita planos de saúde ou convênios?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Os atendimentos são estritamente particulares. Emitimos o recibo e relatório técnico completo contendo todas as especificações e registros exigidos por lei para que você solicite o reembolso diretamente junto ao seu plano médico.</p>
-                    </div>
-                </div>
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        Como funciona o atendimento online? Possui a mesma eficácia?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Sim. O Conselho Federal de Psicologia regulamenta e assegura que a eficácia clínica da modalidade online é idêntica ao presencial. Os atendimentos ocorrem por videochamada protegida em ambiente criptografado de ponta a ponta.</p>
-                    </div>
+                <div class="cta-info reveal">
+                    <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Ambiente Regulado CFP</span>
+                    <span><i class="fa-solid fa-user-check" aria-hidden="true"></i> Prática Baseada em Evidências</span>
+                    <span><i class="fa-regular fa-clock" aria-hidden="true"></i> Agenda com Horários Disponíveis</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="cta-final" id="contato">
-        <div class="container">
-            <h2 class="reveal">Dê o próximo passo em direção a uma vida com mais leveza.</h2>
-            <p class="subtitle reveal">Os horários semanais da agenda clínica técnica são organizados para preservar a qualidade de cada acompanhamento. Garanta seu espaço de cuidado.</p>
-            <div class="btn-group reveal" style="justify-content: center;">
-                <a href="https://wa.me/5524999442374?text=Quero%20reservar%20meu%20horário%20na%20agenda." target="_blank" class="btn btn-whatsapp track-wp" style="padding: 20px 48px; font-size: 1.1rem;">
-                    <i class="fa-brands fa-whatsapp"></i> Agendar Sessão Agora
-                </a>
-            </div>
-            <div class="cta-info reveal">
-                <span><i class="fa-solid fa-shield-halved"></i> Ambiente Regulado CFP</span>
-                <span><i class="fa-solid fa-user-check"></i> Prática Baseada em Evidências</span>
-            </div>
-        </div>
-    </section>
+    </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer role="contentinfo">
         <div class="container footer-content">
             <div class="footer-brand">
                 <h3>Natália Ferreira</h3>
                 <p>Psicóloga Clínica • CRP 05/00000</p>
-                <p style="font-size: 0.8rem; margin-top: 8px;"><i class="fa-regular fa-clock"></i> Segunda a Sexta: 08h às 20h</p>
+                <p style="font-size: 0.8rem; margin-top: 8px;"><i class="fa-regular fa-clock" aria-hidden="true"></i> Segunda a Sexta: 08h às 20h</p>
             </div>
             <div class="footer-details">
-                <p><a href="mailto:contato@nataliaferreira.com.br"><i class="fa-solid fa-envelope"></i> contato@nataliaferreira.com.br</a></p>
-                <p><a href="https://wa.me/5524999442374" target="_blank" class="track-wp"><i class="fa-brands fa-whatsapp"></i> (24) 99944-2374</a></p>
-                <p><a href="https://www.instagram.com/nataliaferreira.psi" target="_blank" class="track-insta"><i class="fa-brands fa-instagram"></i> @nataliaferreira.psi</a></p>
-                <p><a href="https://maps.google.com" target="_blank" class="track-map"><i class="fa-solid fa-location-dot"></i> Centro - Volta Redonda, RJ</a></p>
+                <p><a href="mailto:contato@nataliaferreira.com.br"><i class="fa-solid fa-envelope" aria-hidden="true"></i> contato@nataliaferreira.com.br</a></p>
+                <p><a href="https://wa.me/5524999442374" target="_blank" class="track-wp" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> (24) 99944-2374</a></p>
+                <p><a href="https://www.instagram.com/nataliaferreira.psi" target="_blank" class="track-insta" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> @nataliaferreira.psi</a></p>
+                <p><a href="https://maps.google.com" target="_blank" class="track-map" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Centro - Volta Redonda, RJ</a></p>
             </div>
             <div class="footer-legal">
                 <p>© 2026 Natália Ferreira. Todos os direitos reservados. | <a href="#privacidade">Políticas de Privacidade</a></p>
@@ -439,14 +583,39 @@
         </div>
     </footer>
 
-    <div class="whatsapp-float" id="whatsappFloat">
-        <div class="tooltip" id="whatsappTooltip">Olá, quer tirar alguma dúvida? 💬</div>
-        <a href="https://wa.me/5524999442374?text=Olá!%20Gostaria%20de%20tirar%20uma%20dúvida." target="_blank" class="track-wp" aria-label="Falar com a psicóloga no WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
+    <!-- WhatsApp Flutuante -->
+    <div class="whatsapp-float" id="whatsappFloat" role="complementary" aria-label="Contato WhatsApp">
+        <div class="tooltip" id="whatsappTooltip" role="tooltip">Olá, quer tirar alguma dúvida? 💬</div>
+        <a href="https://wa.me/5524999442374?text=Olá!%20Gostaria%20de%20tirar%20uma%20dúvida." target="_blank" class="track-wp" aria-label="Falar com a psicóloga no WhatsApp" rel="noopener">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
             <span class="badge-count" aria-hidden="true">1</span>
         </a>
     </div>
 
-    <script src="js/main.js"></script>
+    <!-- CTA Sticky Mobile -->
+    <div class="sticky-cta-mobile" id="stickyCta" role="complementary" aria-label="Agendamento rápido">
+        <a href="https://wa.me/5524999442374?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão." target="_blank" class="btn btn-whatsapp track-wp" rel="noopener">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Agendar Agora
+            <span class="availability-badge">📅 3 horários disponíveis</span>
+        </a>
+    </div>
+
+    <!-- JavaScript Modular -->
+    <script src="js/modules/accessibility.js" defer></script>
+    <script src="js/modules/scroll-handler.js" defer></script>
+    <script src="js/modules/sliders.js" defer></script>
+    <script src="js/modules/tracking.js" defer></script>
+    <script src="js/modules/ui.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <!-- Política de Privacidade (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+        script-src 'self' https://www.googletagmanager.com 'unsafe-inline';
+        img-src 'self' data: https://nataliaferreira.com.br;
+        frame-src https://www.google.com;
+    ">
 </body>
-</html>
+    </html>
