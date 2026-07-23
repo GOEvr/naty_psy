@@ -1,7 +1,8 @@
 /**
  * ============================================
- * MAIN.JS - Arquivo Único e Completo
- * Versão: 3.0 - Otimizado
+ * MAIN.JS - Versão 4.0
+ * JavaScript mantido da versão 3.0
+ * As mudanças foram focadas em CSS e HTML
  * ============================================
  */
 
@@ -17,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking = false;
     let depthTicking = false;
     
-    // Scroll Depth Tracking
     let depths = { 25: false, 50: false, 75: false, 100: false };
     let allDepthsReached = false;
     
@@ -32,14 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function updateScrollElements() {
-        // Header
         if (lastScrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
         
-        // Reading Progress
         const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
         if (totalHeight > 0) {
             const progress = Math.min(lastScrollY / totalHeight, 1);
@@ -85,9 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    
     // ============================================
-    // 2. INTERSECTION OBSERVER (Animações)
+    // 2. INTERSECTION OBSERVER
     // ============================================
     
     const revealElements = document.querySelectorAll('.reveal');
@@ -111,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         revealElements.forEach(el => el.classList.add('active'));
     }
-    
     
     // ============================================
     // 3. ACCORDION (FAQ)
@@ -138,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    
     // ============================================
     // 4. CARROSSEL DE DEPOIMENTOS
     // ============================================
@@ -155,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let touchStartX = 0;
         let touchEndX = 0;
         
-        // Criar dots
         if (dotsContainer) {
             testimonials.forEach((_, index) => {
                 const dot = document.createElement('button');
@@ -208,7 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        // Event listeners
         if (prevBtn) prevBtn.addEventListener('click', prevSlide);
         if (nextBtn) nextBtn.addEventListener('click', nextSlide);
         
@@ -239,7 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         window.addEventListener('beforeunload', stopAutoPlay);
     }
-    
     
     // ============================================
     // 5. GALERIA DO CONSULTÓRIO
@@ -280,7 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         window.addEventListener('beforeunload', stopGallery);
     }
-    
     
     // ============================================
     // 6. MENU MOBILE
@@ -324,7 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', closeMenu);
         });
         
-        // Fechar com ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && navLinks.classList.contains('open')) {
                 closeMenu();
@@ -333,9 +323,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    
     // ============================================
-    // 7. TOOLTIP RETENTIVA (48 horas)
+    // 7. TOOLTIP RETENTIVA
     // ============================================
     
     const tooltip = document.getElementById('whatsappTooltip');
@@ -374,7 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (tooltipTimer) clearTimeout(tooltipTimer);
     });
     
-    
     // ============================================
     // 8. TRACKING (GA4)
     // ============================================
@@ -389,7 +377,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // WhatsApp
     document.querySelectorAll('.track-wp').forEach(el => {
         el.addEventListener('click', (e) => {
             const text = e.currentTarget.innerText.trim() || 'Botão WhatsApp';
@@ -397,14 +384,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Mapa
     document.querySelectorAll('.track-map').forEach(el => {
         el.addEventListener('click', () => {
             trackGA('click_mapa', 'Engajamento Local', 'Visualizar Rota');
         });
     });
     
-    // Instagram
     const instaLink = document.querySelector('.track-insta');
     if (instaLink) {
         instaLink.addEventListener('click', () => {
@@ -412,7 +397,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Performance Loading
     if ('performance' in window && 'getEntriesByType' in performance) {
         const nav = performance.getEntriesByType('navigation')[0];
         if (nav) {
@@ -423,9 +407,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    
     // ============================================
-    // 9. ACESSIBILIDADE - Prefers Reduced Motion
+    // 9. PREFERS REDUCED MOTION
     // ============================================
     
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -441,12 +424,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    
-    // ============================================
-    // LOG DE INICIALIZAÇÃO
-    // ============================================
-    
-    console.log('🚀 Natália Ferreira - Site inicializado com sucesso!');
-    console.log('📊 Versão 3.0 - Otimizado e Completo');
-    
+    console.log('🌿 Natália Ferreira - Versão 4.0 - Site Humanizado');
+    console.log('🎨 Nova identidade visual aplicada com sucesso!');
 });
