@@ -1,5 +1,5 @@
 /* ============================================
-   STYLE.CSS - Versão 4.0
+   STYLE.CSS - Versão 4.1
    Identidade Visual Natália Ferreira
    Paleta: Verde-azulado + Lilás
    ============================================ */
@@ -247,6 +247,22 @@ a:hover {
 }
 
 /* ============================================
+   LOGO
+   ============================================ */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+/* ============================================
    COMPONENTS - Botões, Cards, Badges
    ============================================ */
 
@@ -456,15 +472,6 @@ header.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-.logo-img {
-    height: 50px;
-    width: auto;
 }
 
 .nav-links {
@@ -1174,7 +1181,7 @@ footer {
     .section-dark,
     .section-light { padding: var(--spacing-3xl) 0; }
     
-    .logo-img { height: 40px; }
+    .logo-img { height: 40px; max-width: 150px; }
     
     .petal-decoration { display: none; }
 }
@@ -1202,6 +1209,7 @@ footer {
     .section-light { padding: var(--spacing-2xl) 0; }
     .section-title { margin-bottom: var(--spacing-lg); }
     .testimonial-tag { font-size: 0.65rem; }
+    .logo-img { height: 35px; max-width: 130px; }
 }
 
 @media (max-height: 600px) and (orientation: landscape) {
