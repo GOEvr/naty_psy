@@ -1,8 +1,7 @@
 /**
  * ============================================
- * MAIN.JS - Versão 4.0
- * JavaScript mantido da versão 3.0
- * As mudanças foram focadas em CSS e HTML
+ * MAIN.JS - Versão 4.1
+ * JavaScript Único e Completo
  * ============================================
  */
 
@@ -377,6 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    // WhatsApp
     document.querySelectorAll('.track-wp').forEach(el => {
         el.addEventListener('click', (e) => {
             const text = e.currentTarget.innerText.trim() || 'Botão WhatsApp';
@@ -384,19 +384,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+    // Mapa
     document.querySelectorAll('.track-map').forEach(el => {
         el.addEventListener('click', () => {
             trackGA('click_mapa', 'Engajamento Local', 'Visualizar Rota');
         });
     });
     
+    // Instagram - ATUALIZADO
     const instaLink = document.querySelector('.track-insta');
     if (instaLink) {
         instaLink.addEventListener('click', () => {
-            trackGA('click_instagram', 'Redes Sociais', '@nataliaferreira.psi');
+            trackGA('click_instagram', 'Redes Sociais', '@psi_natalia_ferreira');
         });
     }
     
+    // Performance Loading
     if ('performance' in window && 'getEntriesByType' in performance) {
         const nav = performance.getEntriesByType('navigation')[0];
         if (nav) {
@@ -424,6 +427,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    console.log('🌿 Natália Ferreira - Versão 4.0 - Site Humanizado');
-    console.log('🎨 Nova identidade visual aplicada com sucesso!');
+    console.log('🌿 Natália Ferreira - Versão 4.1');
+    console.log('📸 Logo PNG e Instagram atualizados!');
 });
