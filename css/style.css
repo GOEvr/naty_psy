@@ -1,8 +1,8 @@
 /* ============================================
-   STYLE.CSS - Versão 4.2
+   STYLE.CSS - Versão 4.3
    Identidade Visual Natália Ferreira
    Paleta: Verde-azulado + Lilás
-   Logo em WebP
+   Logo em WebP - TAMANHO AJUSTADO
    ============================================ */
 
 /* ============================================
@@ -248,7 +248,7 @@ a:hover {
 }
 
 /* ============================================
-   LOGO
+   LOGO - AUMENTADA
    ============================================ */
 
 .logo {
@@ -257,9 +257,9 @@ a:hover {
 }
 
 .logo-img {
-    height: 55px;
+    height: 70px;
     width: auto;
-    max-width: 200px;
+    max-width: 260px;
     object-fit: contain;
 }
 
@@ -1076,7 +1076,7 @@ footer {
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE - LOGO AUMENTADA
    ============================================ */
 
 @media (max-width: 1024px) {
@@ -1102,6 +1102,12 @@ footer {
     .grid-especialidades { grid-template-columns: repeat(2, 1fr); }
     .social-proof-stats { grid-template-columns: repeat(2, 1fr); }
     .hero-img { max-width: 380px; }
+    
+    /* Logo */
+    .logo-img {
+        height: 60px;
+        max-width: 220px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1182,7 +1188,11 @@ footer {
     .section-dark,
     .section-light { padding: var(--spacing-3xl) 0; }
     
-    .logo-img { height: 40px; max-width: 150px; }
+    /* Logo - Mobile */
+    .logo-img {
+        height: 50px;
+        max-width: 180px;
+    }
     
     .petal-decoration { display: none; }
 }
@@ -1210,7 +1220,12 @@ footer {
     .section-light { padding: var(--spacing-2xl) 0; }
     .section-title { margin-bottom: var(--spacing-lg); }
     .testimonial-tag { font-size: 0.65rem; }
-    .logo-img { height: 35px; max-width: 130px; }
+    
+    /* Logo - Mobile Pequeno */
+    .logo-img {
+        height: 42px;
+        max-width: 150px;
+    }
 }
 
 @media (max-height: 600px) and (orientation: landscape) {
